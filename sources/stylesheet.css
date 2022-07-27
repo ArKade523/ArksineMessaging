@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(fonts/Roboto/Roboto-Regular.ttf);
+}
+
+HTML{
+    font-size: calc((3vh + 3vw)/2);
+}
+
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding-bottom: 3rem;
+}
+
+#form {
+    background: rgba(0,0,0,0.15);
+    padding: 0.25rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 3rem;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+}
+
+#input {
+    border: none;
+    padding: 0 1rem;
+    flex-grow: 1;
+    border-radius: 2rem;
+    margin: 0.25rem;
+}
+
+#input:focus {
+    outline: none;
+}
+
+#form > button {
+    background: #333;
+    border: none;
+    padding: 0 1rem;
+    margin: 0.25rem;
+    border-radius: 3px;
+    outline: none;
+    color: #fff;
+}
+
+
+#messages {
+    list-style-type: none;
+    margin: 1rem;
+    padding: 0;
+}
+
+#messages > li {
+    position: relative;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    border-radius: 2rem;
+    background-color: #efefef;
+    float: left;
+}
+
+#messages > p {
+    position: relative;
+    bottom: 0;
+    left: 1rem;
+    padding: 0;
+    margin: 0;
+    color: #888;
+    font-size: small;
+}
+
+/* #messages > li:nth-child(odd) {
+    background: #efefef;
+} */
+
+#messages > li.user-message {
+    float: right;
+    text-align: right;
+    background-color: #66ccff !important;
+    color: #fff;
+
+}

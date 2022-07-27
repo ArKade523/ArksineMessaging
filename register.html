@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Register | Arksine</title>
+		<link rel="icon" href="sources/Logo.svg">
+
+        <!-- the form awesome library is used to add icons to our form -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <!-- include the stylesheet file -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link href="sources/loginstyle.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="login">
+			<h1>Register Here</h1>
+			<form id="form" action="/registration" method="post">
+				<label for="username">
+					<!-- font awesome icon -->
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password"  onkeyup="checkPasswords()" required>
+				<label for="password2">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password2" placeholder="Verify Password" id="password2" onkeyup="checkPasswords()" required>
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+				<span id="password-verification"></span>
+				<a class="link" href="/">Already have an account?</a>
+				<input type="submit" value="Register" id="submit">
+			</form>
+		</div>
+		<script src="sources/registration-validation.js">
+		</script>
+	</body>
+</html>
