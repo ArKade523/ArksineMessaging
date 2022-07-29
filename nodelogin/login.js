@@ -60,23 +60,33 @@ const auth = (req, res, connection, user, bcrypt, socket_sessions) => {
        connection.query('SELECT * FROM accounts where username = ?', 
        [username], (error, connresults, fields) =>  {
             if (error) throw error;
- 
-            console.log(connresults[0]);
-            
-            req.session.user_id = user.id = connresults[0].id;
 
-            bcrypt.compare(password, connresults[0].password, (error, results) => {
-                // if (error) throw error;
-                if (!results) {
-                    console.log(`Incorrect Password!`);
-                    res.redirect('/')
-                } else if (results) {
-                    console.log('Correct Password!');
-                    req.session.loggedin = true;
-                    console.log(req.session)
-                    res.redirect('/home');
-                }
-            })
+            if (!connresults[0]) {
+                console.log("This was an undefined thing")
+                res.redirect('/')
+                res.end()
+
+            } else {
+                
+                console.log(connresults[0]);
+            
+                req.session.user_id = user.id = connresults[0].id;
+
+                bcrypt.compare(password, connresults[0].password, (error, results) => {
+                    // if (error) throw error;
+                    if (!results) {
+                        console.log(`Incorrect Password!`);
+                        res.redirect('/')
+                    } else if (results) {
+                        console.log('Correct Password!');
+                        req.session.loggedin = true;
+                        console.log(req.session)
+                        res.redirect('/home');
+                    }
+                })
+            }
+ 
+            
         })
        
     } else {

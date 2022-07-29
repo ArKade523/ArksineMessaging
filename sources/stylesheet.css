@@ -78,10 +78,6 @@ body {
     font-size: small;
 }
 
-/* #messages > li:nth-child(odd) {
-    background: #efefef;
-} */
-
 #messages > li.user-message {
     float: right;
     text-align: right;
